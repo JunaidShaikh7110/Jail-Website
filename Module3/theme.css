@@ -1,0 +1,14 @@
+p {
+    font-size: 2em;
+    color: brown;
+}
+
+p.enlarge {
+    font-size: 5em;
+    /* color: brown; */
+}
+
+p.reduce {
+    font-size: 1em;
+    /* color: brown; */
+}
