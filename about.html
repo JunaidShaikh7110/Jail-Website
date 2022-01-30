@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <title>Ben Jewell - About</title>
+
+    <style>
+        body {
+            color: rgb(26, 59, 52);
+        }
+
+        h1{
+            color: rgb(11, 121, 20);
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-shadow: none;
+        }
+
+        ul{
+            margin: auto;
+            padding: 50;
+            text-shadow: none;
+        }
+        li{
+            width: 400px;
+            background-color: rgb(192, 192, 192);
+        }
+        td, th{
+            border: 2px solid green;
+            margin: 0px;
+        }
+        h2 {
+            text-shadow: none;
+        }
+        
+    </style>
+
+</head>
+
+
+
+<body>
+    <h1>Ben Jewell - About</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a id="home" name="NavItem" data-loc=".">Home</a></li>
+            <li><a id="classes" name="NavItem" data-loc="classes.html">Classes</a></li>
+            <li><a id="about" name="NavItem" data-loc="about.html">About</a></li>
+            <li><a id="sandbox" name="NavItem" data-loc="sandbox.html">Sandbox</a></li>
+        </ul></div>
+
+    <div style="background-color: rgba(0, 255, 255, 0.5); width: 80%">
+        <p><b>Interests:</b> Technology (varies aspects), doing side-projects, taking walks outside</p>
+        <p><b>About me:</b> I have always been interested in technology and enjoy working on various projects involving
+            technology and electronics. Educated, certified, and experienced managing computers and networking
+            equipment. Also beginning to learn some coding! I currently have an associate degree, and I am working
+            toward a bachelor’s degree at Point Park University.</p>
+    </div>
+
+    <div style="background-color: rgba(0, 140, 255, 0.5); width: 500px">
+        <h2>Contact Info:</h2>
+        <p>
+        <ul>
+            <li><b>Phone:</b> 724-332-4053</li>
+            <li><b>Email (School):</b> Bjewel@PointPark.edu</li>
+            <li><b>Email (General):</b> Contact@BenJewell.net</li>
+            <li><b>Linked In:</b> https://www.linkedin.com/in/ben-jewell/</li>
+        </ul>
+        </p>
+    </div>
+
+    <script> // Needs to be at end of body to work right
+        $( "[name='NavItem']" ).click(function() {
+            window.location.href = $(this).data("loc");
+        });
+
+        // $( "#home" ).click(function() {
+        //     window.location.href = ".";
+        // });
+        // $( "#classes" ).click(function() {
+        //     window.location.href = "classes.html";
+        // });
+        // $( "#about" ).click(function() {
+        //     window.location.href = "about.html";
+        // });
+    </script>
+
+</body>
+
+</html>
