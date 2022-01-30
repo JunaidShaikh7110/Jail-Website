@@ -52,9 +52,10 @@
     <h1>Ben Jewell - Classes</h1>
     <div data-role="navbar">
         <ul>
-            <li><a id="home">Home</a></li>
-            <li><a id="classes">Classes</a></li>
-            <li><a id="about">About</a></li>
+            <li><a id="home" name="NavItem" data-loc=".">Home</a></li>
+            <li><a id="classes" name="NavItem" data-loc="classes.html">Classes</a></li>
+            <li><a id="about" name="NavItem" data-loc="about.html">About</a></li>
+            <li><a id="sandbox" name="NavItem" data-loc="sandbox.html">Sandbox</a></li>
         </ul></div>
 
 
@@ -74,15 +75,19 @@
     </div>
 
     <script> // Needs to be at end of body to work right
-        $( "#home" ).click(function() {
-            window.location.href = ".";
+        $( "[name='NavItem']" ).click(function() {
+            window.location.href = $(this).data("loc");
         });
-        $( "#classes" ).click(function() {
-            window.location.href = "classes.html";
-        });
-        $( "#about" ).click(function() {
-            window.location.href = "about.html";
-        });
+
+        // $( "#home" ).click(function() {
+        //     window.location.href = ".";
+        // });
+        // $( "#classes" ).click(function() {
+        //     window.location.href = "classes.html";
+        // });
+        // $( "#about" ).click(function() {
+        //     window.location.href = "about.html";
+        // });
     </script>
 
 </body>
