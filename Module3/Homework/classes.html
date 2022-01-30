@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <title>Ben Jewell - Classes</title>
+
+    <style>
+        body {
+            color: rgb(26, 59, 52);
+        }
+
+        h1{
+            color: rgb(11, 121, 20);
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-shadow: none;
+        }
+
+        ul{
+            margin: auto;
+            padding: 50;
+            text-shadow: none;
+        }
+        li{
+            width: 400px;
+            background-color: rgb(192, 192, 192);
+        }
+        td, th{
+            border: 2px solid green;
+            margin: 0px;
+        }
+        h2 {
+            text-shadow: none;
+        }
+        
+    </style>
+
+</head>
+
+
+
+<body>
+    <h1>Ben Jewell - Classes</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a id="home">Home</a></li>
+            <li><a id="classes">Classes</a></li>
+            <li><a id="about">About</a></li>
+        </ul></div>
+
+
+    <div style="background-color: rgba(0, 204, 255, 0.5); width: 500px">
+        <h2>Final Course Plan:</h2>
+        <p><b>Spring 2022:</b></p>
+        <div>
+            <ul>
+                <li>Managerial Accounting</li>
+                <li>Advanced Programming</li>
+                <li>Digital Security</li>
+                <li>Music Appreciation</li>
+                <li>Capstone Project</li>
+            </ul>
+        </div>
+        <p><b>Summer 2022:</b> A few more classes and hopefully an internship!</p>
+    </div>
+
+    <script> // Needs to be at end of body to work right
+        $( "#home" ).click(function() {
+            window.location.href = ".";
+        });
+        $( "#classes" ).click(function() {
+            window.location.href = "classes.html";
+        });
+        $( "#about" ).click(function() {
+            window.location.href = "about.html";
+        });
+    </script>
+
+</body>
+
+</html>
