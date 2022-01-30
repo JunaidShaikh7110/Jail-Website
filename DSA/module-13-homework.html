@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 260: Module 13 Homework</title>
+<style>* { font-family: monospace; }</style>
+<script>
+//----------------//
+// Big O notation //
+//----------------//
+console.log("Big O notation");
+
+// 1. What is the worst case complexity of the following function?
+
+function hasDuplicates(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if (i !== j && arr[i] === arr[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+// O(n2)
+
+console.log(hasDuplicates(["Sandy", "Sandy"]))
+
+// 2. Implement a faster version of the same function and analyze the
+//    complexity of this approach.
+
+function Set() {
+  var items = {};
+
+  this.add = function(value) {
+    if (!items.hasOwnProperty(value)) {
+      items[value] = value;
+      return true;
+    }
+    return false;
+  };
+}
+
+function hasDuplicatesFast(arr) {
+  var mySet = new Set()
+  for (element of arr) {
+    if (mySet.add(element) === false) {
+      return true
+    }
+  }
+  return false
+}
+
+console.log(hasDuplicatesFast(["Sandy", "Sandy"]))
+
+
+//----------------------------//
+// Having fun with algorithms //
+//----------------------------//
+console.log("Having fun with algorithms");
+
+// 1. Solve http://www.spoj.com/problems/PALIN/
+
+function isPalindrome(str) {
+  for (var i = 0; i < str.length/2; i++) {
+    if (str[i] !== str[str.length-i-1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function findSmallestPalindrome(k) {
+  for (i = k + 1; true; i++) {
+    if (isPalindrome(i.toString())) {
+      console.log("Found", i)
+      return i
+    }
+  }
+}
+
+// tests
+console.log(findSmallestPalindrome(808) === 818);
+console.log(findSmallestPalindrome(2133) === 2222);
+
+
+
+//---------//
+// Project //
+//---------//
+console.log("Project");
+
+// 1. Solve https://csacademy.com/contest/interview-archive/task/intersecting-rectangles/
+//    What is the runtime complexity of your solution?
+//    HINT: Try to break down the problems into smaller steps. For example,
+//          find a convenient way to represent rectangles and define a function
+//          that tests whether one rectangle is inside another. Then test your
+//          code on just two rectangles first to make sure it works.
+
+var Rectangle = function(arr) {
+  this.left = arr[0]
+  this.bottom = arr[1]
+  this.right = arr[2]
+  this.top = arr[3]
+}
+
+// It took me a long time to figure this one out. Had to draw it out on graph paper.
+function isIntersecting(rec1, rec2) {
+  //var rec1 = new Rectangle(arr[0]); // Used before structure change to inputing from other fuction
+  //var rec2 = new Rectangle(arr[1]);
+
+  console.log("Checking intersection between", rec1, "and", rec2)
+
+  if (rec1.left > rec2.right) {
+    console.log("Rectangles do not interect because Rec1 is to the right of Rec2")
+    return false
+  }
+  else if (rec1.right < rec2.left) {
+    console.log("Rectangles do not interect because Rec1 is to the left of Rec2")
+    return false
+  }
+  else if (rec1.top < rec2.bottom) {
+    console.log("Rectangles do not interect because Rec1 is below Rec2")
+    return false
+  }
+  else if (rec1.bottom > rec2.top) {
+    console.log("Rectangles do not interect because Rec1 is above Rec2")
+    return false
+  }
+  console.log("Rectangles interect")
+  return true
+}
+
+function checkRectangles(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if (i !== j && isIntersecting(new Rectangle(arr[i]), new Rectangle(arr[j]))) {
+        return true
+      }
+    }
+  }
+  return false
+}
+
+// The 2 rectange only version of the code I has before this was better, but this version is less efficent (On2).
+
+console.log(checkRectangles([[1, 1, 7, 10], [3, 5, 10, 8]]));
+console.log(checkRectangles([[3, 2, 5, 8], [7, 3, 10, 10]]));
+console.log(checkRectangles([[1, 1, 5, 5], [3, 2, 6, 4], [4, 8, 8, 10], [3, 9, 7, 10]]));
+
+
+//console.log(isIntersecting([[1, 1, 7, 10], [3, 5, 10, 8]]));
+//console.log(isIntersecting([[3, 2, 5, 8], [7, 3, 10, 10]]));
+
+
+</script>
+</head>
+<body>
+  See console!
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <title>Ben Jewell - Sandbox</title>
+
+    <style>
+        body {
+            color: rgb(26, 59, 52);
+        }
+
+        h1 {
+            color: rgb(11, 121, 20);
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-shadow: none;
+        }
+
+        ul {
+            margin: auto;
+            padding: 50;
+            text-shadow: none;
+        }
+
+        li {
+            width: 400px;
+            background-color: rgb(192, 192, 192);
+        }
+
+        td,
+        th {
+            border: 2px solid green;
+            margin: 0px;
+        }
+
+        h2 {
+            text-shadow: none;
+        }
+    </style>
+
+</head>
+
+<!-- I was a little confused on the instruction that said “single HTML page only”.
+    I created separate pages before I saw this, and I thought about merging it back
+    into one, using the hashtags to jump to the correct section on the page, but
+    that would cause all the data to be visible at the same time, and they wouldn't
+    be different pages as requested in the instruction “Make it work for at least 3
+    different pages.”. So I'm leaving it separate for now since I'm not sure exactly
+    what to do. -->
+
+<body>
+    <h1>Ben Jewell - Sandbox</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a id="home" name="NavItem" data-loc=".">Home</a></li>
+            <li><a id="classes" name="NavItem" data-loc="classes.html">Classes</a></li>
+            <li><a id="about" name="NavItem" data-loc="about.html">About</a></li>
+            <li><a id="sandbox" name="NavItem" data-loc="sandbox.html">Sandbox</a></li>
+        </ul>
+    </div>
+
+    <p id="dynamic">
+        This is a dynamic textbox that can be reformatted with the options below.
+    </p>
+
+    <label for="fonts">Choose a font:</label>
+
+    <div>
+        <input type="radio" id="Garamond" name="fonts" value="Garamond">
+        <label for="Garamond">Garamond</label>
+    </div>
+
+    <div>
+        <input type="radio" id="Georgia" name="fonts" value="Georgia">
+        <label for="Georgia">Georgia</label>
+    </div>
+
+    <div>
+        <input type="radio" id="BrushScriptMT" name="fonts" value="Brush Script MT">
+        <label for="BrushScriptMT">Brush Script MT</label>
+    </div>
+
+    <label for="colors">Choose a color:</label>
+    <select id="colors">
+        <option value="orange">Orange</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="black" selected>Black</option>
+    </select>
+
+    <div>
+        <img id="sldr" src="Shooting.gif" style="position:absolute" width=200px" height="135px">
+    </div>
+
+    <script> // Needs to be at end of body to work right
+
+    // Animation settings
+        $(document).ready(function () {
+            function rgt() {
+                $('#sldr').animate({ left: "500", top: "1000" }, 8000);
+            }
+        rgt();
+        function hider() {
+            $('#sldr').css("left", "300px")
+        }
+
+        });
+
+        $("[name='fonts']").change(function () {
+            $('#dynamic').css("font-family", $(this).val());
+        });
+
+        $("#colors").change(function () {
+            $('#dynamic').css("color", $(this).val());
+        });
+
+        // $( "#Garamond" ).change(function() {
+        //     $('#dynamic').css("font-family", $(this).val());
+        // });
+
+        // $( "#Georgia" ).change(function() {
+        //     $('#dynamic').css("font-family", $(this).val());
+        // });
+
+        // $( "#BrushScriptMT" ).change(function() {
+        //     $('#dynamic').css("font-family", $(this).val());
+        // });
+
+
+        $("[name='NavItem']").click(function () {
+            window.location.href = $(this).data("loc");
+        });
+
+        // $( "#home" ).click(function() {
+        //     window.location.href = ".";
+        // });
+        // $( "#classes" ).click(function() {
+        //     window.location.href = "classes.html";
+        // });
+        // $( "#about" ).click(function() {
+        //     window.location.href = "about.html";
+        // });
+    </script>
+
+</body>
+
+</html>

@@ -1,27 +1,29 @@
 <html>
-    <head>
-        <title>Animation</title>
-        <script src="jquery-3.1.1.min.js"></script>
-        <!-- Animation settings-->
-        <script type="text/javascript">
-            $(document).ready(function () {
-                function rgt() {
-                    $('#sldr').animate({ left: "1200"}), 900, hider);
+
+<head>
+    <title>Animation</title>
+    <script src="jquery-3.1.1.min.js"></script>
+
+    <!-- Animation settings-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function rgt() {
+                $('#sldr').animate({ left: "500", top: "500" }, 8000);
             }
-            rgt();
-            function hider() {
-                $('#sldr').css("left", "0px")
-            }
+        rgt();
+        function hider() {
+            $('#sldr').css("left", "300px")
+        }
 
         });
-        </script>
-    </head>
-    <body>
-        <p>new</p>
-        <form id="form1" runat="server">
-            <div>
-                <img id="sldr" src="Shooting.gif" style="position:absolute">
-            </div>
-        </form>
-    </body>
+    </script>
+</head>
+
+<body>
+
+        <div>
+            <img id="sldr" src="Shooting.gif" style="position:absolute">
+        </div>
+</body>
+
 </html>
