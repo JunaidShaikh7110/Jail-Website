@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-    <title>Ben Jewell - Home</title>
+    <title>Ben Jewell - Classes</title>
 
     <style>
         body {
@@ -46,16 +46,10 @@
 
 </head>
 
-<!-- I was a little confused on the instruction that said “single HTML page only”.
-    I created separate pages before I saw this, and I thought about merging it back
-    into one, using the hashtags to jump to the correct section on the page, but
-    that would cause all the data to be visible at the same time, and they wouldn't
-    be different pages as requested in the instruction “Make it work for at least 3
-    different pages.”. So I'm leaving it separate for now since I'm not sure exactly
-    what to do. -->
+
 
 <body>
-    <h1>Ben Jewell - Home</h1>
+    <h1>Ben Jewell - Classes</h1>
     <div data-role="navbar">
         <ul>
             <li><a id="home" name="NavItem" data-loc=".">Home</a></li>
@@ -64,42 +58,21 @@
             <li><a id="sandbox" name="NavItem" data-loc="sandbox.html">Sandbox</a></li>
         </ul></div>
 
-    <img src="me.gif" alt="Picture of me" width="150" height="150">
 
-    <p><b>Note:</b> This website is intended to serve as a learning experience for me, and satisfy the requirements of a
-        school project. It will probably not be updated long-term. <a href="http://BenJewell.net">Click here for my
-            primary website, which runs on WordPress!</a></p>
-
-    <h1>Known Bugs With This Website:</h1>
-    <p><table style="border: 5px dotted green; padding: 10px;">
-        <!-- border-spacing: 0px makes the boxes not float, but outside borders too small -->
-        <tr>
-            <th>Date Discovered</th>
-            <th>Description</th>
-            <th>Date Resolved</th>
-        </tr>
-        <tr>
-            <td>1/19/22</td>
-            <td>Spring and Summer get a different font size under "final course plan".</td>
-            <td>1/19/22</td>
-        </tr>
-        <tr>
-            <td>1/19/22</td>
-            <td>This table has floating boxes and the padding is not good!</td>
-            <td>Maybe someday</td>
-        </tr>
-        <tr>
-            <td>1/19/22</td>
-            <td>The bullet points ae missing on the unordered lists!</td>
-            <td>1/19/22</td>
-        </tr>
-        <tr>
-            <td>1/30/22</td>
-            <td>The navbar is hardcorded on each page instead of in a seperate JS file.</td>
-            <td>Maybe someday</td>
-        </tr>
-
-    </table></p>
+    <div style="background-color: rgba(0, 204, 255, 0.5); width: 500px">
+        <h2>Final Course Plan:</h2>
+        <p><b>Spring 2022:</b></p>
+        <div>
+            <ul>
+                <li>Managerial Accounting</li>
+                <li>Advanced Programming</li>
+                <li>Digital Security</li>
+                <li>Music Appreciation</li>
+                <li>Capstone Project</li>
+            </ul>
+        </div>
+        <p><b>Summer 2022:</b> A few more classes and hopefully an internship!</p>
+    </div>
 
     <script> // Needs to be at end of body to work right
         $( "[name='NavItem']" ).click(function() {
